@@ -12,10 +12,14 @@ main().catch((error) => {
 async function main() {
     // const client = new LotteryClient("https://api.mainnet-beta.solana.com", Keypair.fromSecretKey(bs58.decode(privateKey)));
     const client = new LotteryClient("https://api.testnet.solana.com", Keypair.fromSecretKey(bs58.decode(privateKey)));
-    const tx = await client.draw();
-    console.log("draw tx", tx);
-    const configAccount = await client.queryConfigAccount();
-    const userAccount = await client.queryUserAccount();
-    console.log("configAccount", configAccount);
-    console.log("userAccount", userAccount);
+
+    //loop 1000 times
+    for (let i = 0; i < 1000; i++) {
+        const tx = await client.draw();
+        console.log("draw tx", tx);
+        //sleep 5 second
+        await sleep(1000 * 5);
+    }
 }
+
+const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
