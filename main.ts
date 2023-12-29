@@ -10,8 +10,8 @@ main().catch((error) => {
 });
 
 async function main() {
-    // const client = new LotteryClient("https://api.mainnet-beta.solana.com", Keypair.fromSecretKey(bs58.decode(privateKey)));
-    const client = new LotteryClient("https://api.testnet.solana.com", Keypair.fromSecretKey(bs58.decode(privateKey)));
+    const client = new LotteryClient("https://api.mainnet-beta.solana.com", Keypair.fromSecretKey(bs58.decode(privateKey)));
+    // const client = new LotteryClient("https://api.testnet.solana.com", Keypair.fromSecretKey(bs58.decode(privateKey)));
 
     //loop 1000 times
     for (let i = 0; i < 1000; i++) {
