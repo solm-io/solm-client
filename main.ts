@@ -9,12 +9,12 @@ main().catch((error) => {
 });
 
 async function main() {
-    // const connection = new Connection("https://api.mainnet-beta.solana.com");
-    const lotteryClient = new LotteryClient("https://api.testnet.solana.com", Keypair.fromSecretKey(new Uint8Array(userKey)));
-    const tx = await lotteryClient.draw();
+    // const client = new LotteryClient("https://api.mainnet-beta.solana.com", Keypair.fromSecretKey(new Uint8Array(userKey)));
+    const client = new LotteryClient("https://api.testnet.solana.com", Keypair.fromSecretKey(new Uint8Array(userKey)));
+    const tx = await client.draw();
     console.log("draw tx", tx);
-    const configAccount = await lotteryClient.queryConfigAccount();
-    const userAccount = await lotteryClient.queryUserAccount();
+    const configAccount = await client.queryConfigAccount();
+    const userAccount = await client.queryUserAccount();
     console.log("configAccount", configAccount);
     console.log("userAccount", userAccount);
 }

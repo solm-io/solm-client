@@ -10,4 +10,4 @@ package-lock.json
 yarn.lock
 .yarnrc.yml
 Cargo.lock
-.wallets
+.wallets/user.json
