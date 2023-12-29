@@ -1,4 +1,4 @@
-import userKey from "./.wallets/user.json";
+import userKey from "./key.json";
 import { Keypair } from "@solana/web3.js";
 import { LotteryClient } from "./client";
 
